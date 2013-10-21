@@ -2,7 +2,7 @@
 require:
     - play -> gae 1.6.0
 #    - play-rythm -> play-rythm
-    - com.gelinsoft -> play-rythm 1.0-b9j
+    - com.gelinsoft -> play-rythm 1.0-b9l
 
 repositories:
     - local:

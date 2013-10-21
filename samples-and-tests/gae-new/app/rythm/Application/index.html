@@ -21,3 +21,60 @@
 	Show how to pass your model object to the template.<BR/>
 	For more help please refer to <a href="aaa">online reference</a>.
 </div>
+
+<div class="page">
+	<h3><a href="@url(cause500)">Cause500</a></h3>
+		Causing a runtime error.
+	@verbatim{
+		<pre class="code">
+
+	public static void cause500() {
+		int result = 500 / 0 ;
+		render();
+	}
+		</pre>
+	<b>Expected : </b> the <code>error 500 page</code> is displayed. 
+}</div>
+
+<div class="page">
+	<h3><a href="@url(causeTemplateNotFound)">causeTemplateNotFound</a></h3>
+		Testing a missing template file : Application/causeTemplateNotFound.html is not present<br/>
+		The action is correctly defined, though.
+	@verbatim{
+		<pre class="code">
+	GET		/causeTemplateNotFound		Application.causeTemplateNotFound
+		</pre>
+}
+	<b>Expected : </b> the <code>error 500 page</code> is displayed. 
+</div>
+
+<div class="page">
+	<h3><a href="/error404">error404</a></h3>
+	Testing the routing to the custom 404 page
+	@verbatim{
+		<pre class="code">
+	GET		/error404					404
+		</pre>
+}
+	<b>Expected : </b> the <code>error 404 page</code> is displayed. 
+</div>
+
+<div class="page">
+	<h3><a href="/nopage">nopage</a></h3>
+	<b>Expected : </b> the <code>error 404 page</code> is displayed. 
+</div>
+
+<div class="page">
+	<h3><a href="/favicon.ico">favicon.ico</a></h3>
+	Testing the routing to the usual favicon -> 404
+	@verbatim{
+		<pre class="code">
+	GET		/favicon.ico					404
+		</pre>
+}
+	<b>Expected : </b> the <code>error 404 page</code> is displayed. 
+</div>
+
+<div class="page">
+	<h3><a href="@url(Api.createMessage)">createMessage</a></h3>
+</div>

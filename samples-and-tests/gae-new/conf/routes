@@ -2,16 +2,21 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET / Application.index
 
 # Ignore favicon requests
-GET /favicon.ico 404
+GET		/favicon.ico				404
+GET		/public/					staticDir:public
 
-# Map static resources from the /app/public folder to the /public path
-GET /public/ staticDir:public
-GET /js/ /staticDir:public/js
-GET /css/ /staticDir:public/css
+# Home page
+GET		/							Application.index
 
-# Catch all
-*       /{controller}/{action}                  {controller}.{action}
+GET		/displaySimpleArgs			Application.displaySimpleArgs
+GET		/displayModelArgs			Application.displayModelArgs
+
+# Test error handling
+GET		/error404					404
+
+GET		/cause500					Application.cause500
+GET		/causeTemplateNotFound		Application.causeTemplateNotFound
+
+GET		/createMessage				Api.createMessage
